@@ -5,7 +5,8 @@ function App() {
 
   return (
     <>
-      My name is Labib
+      My name is Labib <br />
+      <p className='text-labib/10'>My name is Kasem</p>
     </>
   )
 }
