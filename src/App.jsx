@@ -14,10 +14,15 @@ function App() {
     },[])
   const [credit,setCredit] = useState(0);
   function handleFreeCredit(){
-    setCredit(credit+50000000);
+    setCredit(credit+5000000);
     alert("Credit Added")
   }
   const [choosenPlayers,setChoosenPlayers] = useState([]);
+  function handleRemovePlayer(player){
+    alert("Player Removed");
+    const newChoosenPlayer = choosenPlayers.filter(playerRemove=>playerRemove.id!==player.id);
+    setChoosenPlayers(newChoosenPlayer);
+  }
   function handleChoosePlayer(player){
     if(choosenPlayers.length<6){
       const isPlayerChoosen = choosenPlayers.find(playerfound=>playerfound.id==player.id);
@@ -25,6 +30,7 @@ function App() {
         if(credit>=player.price){
         setCredit(credit-player.price);
         setChoosenPlayers([...choosenPlayers,player]);
+        alert('Player Added!')
         }
         else{
           alert("You don't have enough money")
@@ -51,6 +57,7 @@ function App() {
       })
     }
   }
+
   const activeButton = 'btn rounded-none hover:bg-primary-bg/70 hover:text-primary-text bg-primary-bg text-primary-text font-bold';
   const deActiveButton = 'btn rounded-none font-bold hover:bg-primary-bg/70 hover:text-primary-text';
   return (
@@ -79,7 +86,7 @@ function App() {
         </section>
         <section>
           { toggleState.type=='available-button'?
-            <PlayersAvailable handleChoosePlayer={handleChoosePlayer} availablePlayers={availablePlayers}></PlayersAvailable>:<ChoosenPlayers choosenPlayers={choosenPlayers}/>}
+            <PlayersAvailable handleChoosePlayer={handleChoosePlayer} availablePlayers={availablePlayers}></PlayersAvailable>:<ChoosenPlayers handleToggle={handleToggle} handleRemovePlayer={handleRemovePlayer} choosenPlayers={choosenPlayers}/>}
         </section>
       </main>
       <footer>

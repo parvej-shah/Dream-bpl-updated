@@ -1,15 +1,11 @@
 import React from 'react'
-
-export default function ({player}) {
+import PropTypes from 'prop-types';
+export default function ChoosenPlayer({player,handleRemovePlayer}) {
     const {
         player_name,
-        country,
         player_type,
-        player_rating,
         batting_style,
         bowling_style,
-        id,
-        price,
         player_image,
       } = player;
   return (
@@ -22,7 +18,7 @@ export default function ({player}) {
           </div>
         </div>
         <div>
-        <button className="text-[#F14749]">
+        <button onClick={()=>handleRemovePlayer(player)} className="text-[#F14749]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -41,4 +37,7 @@ export default function ({player}) {
         </div>
     </div>
   )
+}
+ChoosenPlayer.propTypes={
+  handleRemovePlayer: PropTypes.func.isRequired
 }
