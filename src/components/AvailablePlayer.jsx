@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AvailablePlayer({ playerAvailable }) {
+export default function AvailablePlayer({ playerAvailable,handleChoosePlayer }) {
   const {
     player_name,
     country,
@@ -71,7 +71,7 @@ export default function AvailablePlayer({ playerAvailable }) {
           </div>
           <div className="flex text-primary-text font-semibold justify-between items-center">
             <h2>Price:${price}</h2>
-            <button className='btn border rounded-xl font-bold hover:bg-primary-bg/70 hover:text-primary-text'>Choose Player</button>
+            <button className='btn border rounded-xl font-bold hover:bg-primary-bg/70 hover:text-primary-text' onClick={()=>handleChoosePlayer(playerAvailable)}>Choose Player</button>
           </div>
         </div>
       </div>
