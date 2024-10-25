@@ -1,7 +1,7 @@
 import React from "react";
 import heroLogo from "../assets/images/banner-main.png";
 import bannerBg from "../assets/images/bg-shadow.png";
-export default function Hero() {
+export default function Hero({handleFreeCredit}) {
   return (
     <div className="hero bg-primary-text rounded-3xl mt-2">
     <div className="w-full h-full"><img className="h-full w-full rounded-3xl" src={bannerBg} alt="" /></div>
@@ -13,7 +13,7 @@ export default function Hero() {
           <p className="py-6 text-white/70 font-medium text-2xl">
           Beyond Boundaries Beyond Limits
           </p>
-          <button className="btn rounded-2xl shadow-md bg-primary-bg text-primary-text font-bold border-primary-text border-4 outline outline-primary-bg">Claim Free Credit</button>
+          <button onClick={handleFreeCredit} className="btn rounded-2xl shadow-md bg-primary-bg text-primary-text font-bold border-primary-text border-4 outline outline-primary-bg">Claim Free Credit</button>
         </div>
       </div>
     </div>

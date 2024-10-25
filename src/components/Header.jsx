@@ -1,7 +1,7 @@
 import React from "react";
 import coin from "../assets/images/doller1.png";
 import logoNav from "../assets/images/logo.png";
-export default function Header() {
+export default function Header({credit}) {
   return (
     <div className="navbar justify-between bg-base-100 py-2">
       {/* navbar start */}
@@ -65,7 +65,7 @@ export default function Header() {
         </div>
         <div className="">
           <a className="flex gap-1 border p-2 rounded-md text-primary-text font-semibold">
-            {}0 Coin <img src={coin} alt="" />
+            {credit} Coin <img src={coin} alt="" />
           </a>
         </div>
       </div>

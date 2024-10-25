@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import ChoosenPlayer from "./ChoosenPlayer";
 
-export default function ChoosenPlayers() {
+export default function ChoosenPlayers({ choosenPlayers }) {
+    
   return (
-    <div>ChoosenPlayers</div>
-  )
+    <div className="space-y-3">
+      {choosenPlayers.map((player) => (
+        <ChoosenPlayer key={player.id} player={player}/>
+      ))}
+    </div>
+  );
 }
