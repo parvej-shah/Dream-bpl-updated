@@ -7,10 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        "labib":"#111111"
+        "primary-text":"#131313"
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('daisyui'),
+  ],
 }
 
