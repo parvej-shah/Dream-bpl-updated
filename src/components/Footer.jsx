@@ -4,7 +4,7 @@ import './button.css'
 export default function Footer() {
   return (
     <div className=" bg-[#06091A] text-base-content p-10">
-      <div className="flex justify-center py-5">
+      <div className="flex justify-center pt-48 p-5">
         <img src={logoFooter} alt="" />
       </div>
       <div className="footer">

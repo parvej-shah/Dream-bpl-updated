@@ -96,8 +96,10 @@ function App() {
             <PlayersAvailable handleChoosePlayer={handleChoosePlayer} availablePlayers={availablePlayers}></PlayersAvailable>:<ChoosenPlayers handleToggle={handleToggle} handleRemovePlayer={handleRemovePlayer} choosenPlayers={choosenPlayers}/>}
         </section>
       </main>
+      <div className='-mb-48 '>
       <Newsletter/>
-      <footer className='mt-10'>
+      </div>
+      <footer className=''>
         <Footer/>
       </footer>
     </div>
