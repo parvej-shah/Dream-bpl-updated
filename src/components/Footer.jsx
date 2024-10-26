@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="divider"></div>
-      <p className="text-white">@2024 DreamSix-BPL,All Rights Reserved.</p>
+      <p className="text-white text-center">@2024 DreamSix-BPL,All Rights Reserved.</p>
     </div>
   );
 }

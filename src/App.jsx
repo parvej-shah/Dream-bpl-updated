@@ -34,18 +34,18 @@ function App() {
         if(credit>=player.price){
         setCredit(credit-player.price);
         setChoosenPlayers([...choosenPlayers,player]);
-        toast.success('Player Added!',{position:'top-center'})
+        toast.success(`${player.player_name} Added to your squad!`,{position:'top-center'})
         }
         else{
           toast.error("You don't have enough money",{position:'top-center',theme:'colored'})
         }
       }
       else{
-        toast.warning("player already choosen",{position:'top-center'})
+        toast.warning(`${player.player_name} already choosen`,{position:'top-center'})
       }
     }
     else{
-      toast.error("Player Limit exists",{position:'top-center'})
+      toast.error("Your Squad is Full",{position:'top-center'})
     }
   }
   const [toggleState,setToggleState] = useState({type:'available-button'});

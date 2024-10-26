@@ -1,8 +1,4 @@
 
-## Private For your Assignment
-
-you have to create private repo in our Google Classroom . here is the Link
-
 # [https://classroom.github.com/a/8giEjBQc](https://classroom.github.com/a/8giEjBQc)
 
 
@@ -53,11 +49,11 @@ Welcome to **Assignment -07**. This assignment involves building a React-based a
 - Each card will have player image , name ,  player role, price. 
 - a remove button for each player.
 
-### Newsletter Section
+### Newsletter Section✅
 
 - Design the newsletter section according to Figma.
 
-### Footer
+### Footer✅
 
 - Design the footer section following the Figma design.
 
@@ -66,7 +62,7 @@ Welcome to **Assignment -07**. This assignment involves building a React-based a
 ### Challenges
 
 - **Use React-Toastify**:
-  Replace all alerts in the interface with `React-Toastify` for better user notifications.
+  Replace all alerts in the interface with `React-Toastify` for better user notifications.✅
 
 - **Implement Selected Player Remove Functionality**:✅
   Add a "Remove" button to each selected player card. On click, the player should be removed from the selected players' section.
