@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'btn-bg':"url('./src/assets/images/bg-shadow.png')"
+      },
       colors: {
         "primary-text":"#131313",
         "primary-bg":"#E7FE29",

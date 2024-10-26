@@ -59,19 +59,12 @@ export default function AvailablePlayer({ playerAvailable,handleChoosePlayer }) 
             </div>
           </div>
           <div className="divider"></div>
-          <div className="flex justify-between"><h2 className="text-primary-text font-bold">Rating</h2><p>{player_rating}+</p></div>
-          <div className="flex justify-between text-primary-text font-semibold"><h3>Batting Type</h3><h3>Bowling Type</h3></div>
-          <div className="flex justify-between">
-          <div className="text-primary-text bg-primary-text/5 px-4 py-2 rounded-md">
-                <p>{batting_style}</p>
-            </div>
-            <div className="text-primary-text bg-primary-text/5 px-4 py-2 rounded-md">
-                <p>{bowling_style}</p>
-            </div>
-          </div>
+          <div className="flex justify-between"><h2 className="text-primary-text font-bold">Rating</h2><p className="text-xs font-normal">{player_rating}+</p></div>
+          <div className="flex justify-between text-primary-text font-semibold"><h3>Batting Type</h3><h3 className="text-xs font-normal">{batting_style}</h3></div>
+          <div className="flex justify-between text-primary-text font-semibold"><h3>Bowling Type</h3><h3 className="text-xs font-normal">{bowling_style}</h3></div>
           <div className="flex text-primary-text font-semibold justify-between items-center">
             <h2>Price:${price}</h2>
-            <button className='btn border rounded-xl font-bold hover:bg-primary-bg/70 hover:text-primary-text' onClick={()=>handleChoosePlayer(playerAvailable)}>Choose Player</button>
+            <button className='btn border rounded-xl bg-yellow-400 font-bold hover:bg-primary-bg/70 hover:text-primary-text' onClick={()=>handleChoosePlayer(playerAvailable)}>Choose Player</button>
           </div>
         </div>
       </div>

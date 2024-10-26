@@ -1,10 +1,14 @@
 import React from "react";
-
+import logoFooter from '../assets/images/logo-footer.png'
+import './button.css'
 export default function Footer() {
   return (
-    <div className=" bg-base-200 text-base-content p-10">
+    <div className=" bg-[#06091A] text-base-content p-10">
+      <div className="flex justify-center py-5">
+        <img src={logoFooter} alt="" />
+      </div>
       <div className="footer">
-        <nav className="max-w-sm">
+        <nav className="max-w-sm text-white">
           <h6 className="footer-title text-white">Aboaut Us</h6>
           <p>
             We are a passionate team dedicated to providing the best services to
@@ -12,7 +16,7 @@ export default function Footer() {
           </p>
         </nav>
         <nav></nav>
-        <nav>
+        <nav className="text-white">
           <h6 className="footer-title text-white">Quick Links</h6>
           <li className="link link-hover list-disc">Home</li>
           <li className="link link-hover list-disc">Service</li>
@@ -20,11 +24,11 @@ export default function Footer() {
           <li className="link link-hover list-disc">Contact</li>
         </nav>
         <nav></nav>
-        <div>
+        <div className="text-white">
           <h6 className="footer-title text-white">Subscriber</h6>
           <fieldset className="form-control w-80">
             <label className="label">
-              <span className="label-text">Subscribe to our newsletter for the latest updates.</span>
+              <span className="label-text text-white">Subscribe to our newsletter for the latest updates.</span>
             </label>
             <div className="join">
               <input
@@ -32,11 +36,13 @@ export default function Footer() {
                 placeholder="Enter Your Email"
                 className="input input-bordered join-item"
               />
-              <button className="btn bg-black join-item">Subscribe</button>
+              <button  className="font-bold btn join-item bg-gradient-to-r from-[#d48cb5] to-[#f0c454]">Subscribe</button>
             </div>
           </fieldset>
         </div>
       </div>
+      <div className="divider"></div>
+      <p className="text-white">@2024 DreamSix-BPL,All Rights Reserved.</p>
     </div>
   );
 }

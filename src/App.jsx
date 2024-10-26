@@ -4,6 +4,10 @@ import Hero from './components/Hero'
 import PlayersAvailable from './components/PlayersAvailable';
 import Footer from './components/Footer';
 import ChoosenPlayers from './components/ChoosenPlayers';
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import Newsletter from './components/Newsletter';
+
 
 function App() {
   const [availablePlayers,setAvailablePlayers] = useState([]);
@@ -15,11 +19,11 @@ function App() {
   const [credit,setCredit] = useState(0);
   function handleFreeCredit(){
     setCredit(credit+5000000);
-    alert("Credit Added")
+    toast.success("Credit Added",{theme:'dark',position:'top-center'})
   }
   const [choosenPlayers,setChoosenPlayers] = useState([]);
   function handleRemovePlayer(player){
-    alert("Player Removed");
+    toast.success("Player Removed",{theme:'colored',position:'top-center'});
     const newChoosenPlayer = choosenPlayers.filter(playerRemove=>playerRemove.id!==player.id);
     setChoosenPlayers(newChoosenPlayer);
   }
@@ -30,18 +34,18 @@ function App() {
         if(credit>=player.price){
         setCredit(credit-player.price);
         setChoosenPlayers([...choosenPlayers,player]);
-        alert('Player Added!')
+        toast.success('Player Added!',{position:'top-center'})
         }
         else{
-          alert("You don't have enough money")
+          toast.error("You don't have enough money",{position:'top-center',theme:'colored'})
         }
       }
       else{
-        alert("player already choosen")
+        toast.warning("player already choosen",{position:'top-center'})
       }
     }
     else{
-      alert("Player Limit exists")
+      toast.error("Player Limit exists",{position:'top-center'})
     }
   }
   const [toggleState,setToggleState] = useState({type:'available-button'});
@@ -58,17 +62,20 @@ function App() {
     }
   }
 
-  const activeButton = 'btn rounded-none hover:bg-primary-bg/70 hover:text-primary-text bg-primary-bg text-primary-text font-bold';
-  const deActiveButton = 'btn rounded-none font-bold hover:bg-primary-bg/70 hover:text-primary-text';
+  const activeButton = 'join-item btn  hover:bg-primary-bg/70 hover:text-primary-text bg-primary-bg text-primary-text font-bold';
+  const deActiveButton = 'join-item btn  font-bold hover:bg-primary-bg/70 hover:text-primary-text';
   return (
-    <div className=''>
+    <div className='bg-white'>
+      <ToastContainer/>
       {/* header */}
-      <div className='container mx-auto'>
-      <header className='fixed top-0 container mx-auto z-10'>
+      <div className=' bg-white w-full'>
+      <div className='w-full fixed top-0 z-20 bg-white '>
+      <header className='container mx-auto '>
         <nav>
           <Header credit={credit}/>
         </nav>
       </header>
+      </div>
       </div>
       
       {/* hero section */}
@@ -78,10 +85,10 @@ function App() {
       {/* main section */}
       <main className='container mx-auto'>
         <section className='flex justify-between my-10 z-10 sticky top-24 bg-white backdrop-filter backdrop-blur-lg bg-opacity-10'>
-          <h3 className='text-3xl font-bold text-primary-text'>Available Players</h3>
-          <div className=''>
-            <button className={`${toggleState.type=='available-button'?activeButton:deActiveButton} ${"border border-r-0 rounded-lg rounded-r-none"}`} onClick={()=>handleToggle('available-button')}> Available </button>
-            <button className={`${toggleState.type=='choosen-button'?activeButton:deActiveButton} ${"border border-l-0 rounded-lg rounded-l-none"}`} onClick={()=>handleToggle('choosen-button')}>Selected ({choosenPlayers.length})</button>
+          <h3 className='text-3xl font-bold text-primary-text'>{toggleState.type=='available-button'?"Available Players":`Selected Player ${choosenPlayers.length}/6`}</h3>
+          <div className='join'>
+            <button className={`${toggleState.type=='available-button'?activeButton:deActiveButton}`} onClick={()=>handleToggle('available-button')}> Available </button>
+            <button className={`${toggleState.type=='choosen-button'?activeButton:deActiveButton}`} onClick={()=>handleToggle('choosen-button')}>Selected ({choosenPlayers.length})</button>
           </div>
         </section>
         <section>
@@ -89,7 +96,8 @@ function App() {
             <PlayersAvailable handleChoosePlayer={handleChoosePlayer} availablePlayers={availablePlayers}></PlayersAvailable>:<ChoosenPlayers handleToggle={handleToggle} handleRemovePlayer={handleRemovePlayer} choosenPlayers={choosenPlayers}/>}
         </section>
       </main>
-      <footer>
+      <Newsletter/>
+      <footer className='mt-10'>
         <Footer/>
       </footer>
     </div>
